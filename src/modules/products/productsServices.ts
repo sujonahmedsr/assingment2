@@ -5,8 +5,8 @@ const createProduct = async (payload: productInterface) => {
     const result = await productModel.create(payload)
     return result
 }
-const getProducts = async () => {
-    const result = await productModel.find()
+const getProducts = async (filter: any) => {
+    const result = await productModel.find(filter)
     return result
 }
 const getSingleProducts = async (id: string) => {
@@ -14,7 +14,7 @@ const getSingleProducts = async (id: string) => {
     return result
 }
 const updateSingleProducts = async (id: string, body: productInterface) => {
-    const result = await productModel.findByIdAndUpdate(id,body, {new : true})
+    const result = await productModel.findByIdAndUpdate(id, body, { new: true })
     return result
 }
 const deleteSingleProducts = async (id: string) => {

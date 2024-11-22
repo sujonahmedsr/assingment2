@@ -53,24 +53,24 @@ const getSingleConProduct = async (req: Request, res: Response) => {
     }
 }
 
-const updateSingleConProduct = async (req: Request, res: Response) => {
-    try {
-        const body = req.body
-        const id = req.params.id
-        const result = await productServices.updateSingleProducts(id, body)
-        res.status(200).send({
-            success: true,
-            messsage: 'Bicycle updated successfully',
-            data: result
-        })
-    } catch (err) {
-        res.status(500).send({
-            success: false,
-            messsage: 'Validation failed',
-            err
-        })
-    }
-}
+// const updateSingleConProduct = async (req: Request, res: Response) => {
+//     try {
+//         const body = req.body
+//         const id = req.params.id
+//         const result = await productServices.updateSingleProducts(id, body)
+//         res.status(200).send({
+//             success: true,
+//             messsage: 'Bicycle updated successfully',
+//             data: result
+//         })
+//     } catch (err) {
+//         res.status(500).send({
+//             success: false,
+//             messsage: 'Validation failed',
+//             err
+//         })
+//     }
+// }
 const deleteSingleConProduct = async (req: Request, res: Response) => {
     try {
         const id = req.params.id

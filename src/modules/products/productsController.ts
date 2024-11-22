@@ -7,14 +7,14 @@ const createConProduct = async (req: Request, res: Response) => {
         const body = req.body;
         const result = await productServices.createProduct(body)
         res.status(200).send({
-            success: true,
             messsage: 'Bicycle created successfully',
+            success: true,
             data: result,
         })
     } catch (error: any) {
         res.status(500).send({
-            success: false,
             messsage: 'Validation failed',
+            success: false,
             error,
             stack: error?.stack
         })
@@ -38,14 +38,14 @@ const getConProduct = async (req: Request, res: Response) => {
 
         const result = await productServices.getProducts(filter)
         res.status(200).send({
-            success: true,
             messsage: 'Bicycles retrieved successfully',
+            status: true,
             data: result
         })
     } catch (error: any) {
         res.status(500).send({
-            success: false,
-            messsage: 'Validation failed',
+            messsage: 'Something went wrong!',
+            status: false,
             error,
             stack: error?.stack
         })
@@ -59,14 +59,14 @@ const getSingleConProduct = async (req: Request, res: Response) => {
         const id = req.params.id
         const result = await productServices.getSingleProducts(id)
         res.status(200).send({
-            success: true,
             messsage: 'Bicycle retrieved successfully',
+            status: true,
             data: result
         })
     } catch (error: any) {
         res.status(500).send({
-            success: false,
-            messsage: 'Validation failed',
+            messsage: 'Something went wrong!',
+            status: false,
             error,
             stack: error?.stack
         })
@@ -81,14 +81,14 @@ const updateSingleConProduct = async (req: Request, res: Response) => {
         const id = req.params.id
         const result = await productServices.updateSingleProducts(id, body)
         res.status(200).send({
-            success: true,
             messsage: 'Bicycle updated successfully',
+            status: true,
             data: result
         })
     } catch (error: any) {
         res.status(500).send({
-            success: false,
-            messsage: 'Validation failed',
+            messsage: 'Something went wrong!',
+            status: false,
             error,
             stack: error?.stack
         })
@@ -101,14 +101,14 @@ const deleteSingleConProduct = async (req: Request, res: Response) => {
         const id = req.params.id
         await productServices.deleteSingleProducts(id)
         res.status(200).send({
-            success: true,
             messsage: 'Bicycle deleted successfully',
+            status: true,
             data: {}
         })
     } catch (error: any) {
         res.status(500).send({
-            success: false,
-            messsage: 'Validation failed',
+            messsage: 'Something went wrong!',
+            status: false,
             error,
             stack: error?.stack
         })

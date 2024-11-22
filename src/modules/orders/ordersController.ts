@@ -51,13 +51,13 @@ const getAllConOrder = async (req: Request, res: Response) => {
         const result = await orderServices.getAllOrder();
         res.status(200).send({
             message: "Revenue calculated successfully",
-            success: true,
+            status: true,
             data: result
         })
     } catch (error: any) {
         res.status(500).send({
-            success: false,
             messsage: 'Validation failed',
+            status: false,
             error,
             stack: error?.stack
         })

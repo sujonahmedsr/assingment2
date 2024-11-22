@@ -1,6 +1,8 @@
 import { orderInterface } from "./ordersInterface"
 import { orderModel } from "./ordersSchemaModel"
 
+
+// create order 
 const createOrder = async (payload: orderInterface) => {
 
     const result = await orderModel.create(payload)

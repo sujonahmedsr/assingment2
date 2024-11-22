@@ -6,7 +6,7 @@ dotenv.config()
 const port = process.env.PORT || 3000;
 const databaseUrl = process.env.DATABASEURL;
 
-
+// connect mongoose 
 async function main() {
     try {
         await mongoose.connect(databaseUrl as string);

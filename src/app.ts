@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/api/v1/products', productsRouter)
-app.use('api/v1/orders', orderRouter)
+app.use('/api/v1/orders', orderRouter)
 
 
 

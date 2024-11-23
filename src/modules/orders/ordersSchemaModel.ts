@@ -11,7 +11,7 @@ const orderShchema = new Schema<orderInterface>({
     product: {type: mongoose.Types.ObjectId, required: [true, 'product field is required']},
     quantity: {type: Number, required: [true, 'quantity field is required']},
     totalPrice: {type: Number, required: [true, 'totalPrice field is required']}
-}, {timestamps: true})
+}, {timestamps: true, versionKey: false})
 
 // create model for order 
 export const orderModel = model<orderInterface>('orders', orderShchema)

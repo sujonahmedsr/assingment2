@@ -36,7 +36,7 @@ const productSchema = new Schema<productInterface>({
         required: [true, 'InStock field is required']
     },
 
-}, { timestamps: true })
+}, { timestamps: true, versionKey: false })
 
 // create model 
 export const productModel = model<productInterface>('products', productSchema)

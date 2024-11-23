@@ -40,7 +40,7 @@ const createConOrder = async (req: Request, res: Response) => {
     } catch (error: any) {
         res.status(500).send({
             success: false,
-            messsage: 'Validation failed',
+            messsage: error.message || 'Validation failed',
             error,
             stack: error?.stack
         })
@@ -56,7 +56,7 @@ const getAllConOrder = async (req: Request, res: Response) => {
         })
     } catch (error: any) {
         res.status(500).send({
-            messsage: 'Validation failed',
+            messsage: error.message || 'Something went wrong!',
             status: false,
             error,
             stack: error?.stack

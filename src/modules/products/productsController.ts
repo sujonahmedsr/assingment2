@@ -13,7 +13,7 @@ const createConProduct = async (req: Request, res: Response) => {
         })
     } catch (error: any) {
         res.status(500).send({
-            messsage: 'Validation failed',
+            messsage: error.message || 'Validation failed',
             success: false,
             error,
             stack: error?.stack
@@ -44,7 +44,7 @@ const getConProduct = async (req: Request, res: Response) => {
         })
     } catch (error: any) {
         res.status(500).send({
-            messsage: 'Something went wrong!',
+            messsage: error.message || 'Something went wrong!',
             status: false,
             error,
             stack: error?.stack
@@ -65,7 +65,7 @@ const getSingleConProduct = async (req: Request, res: Response) => {
         })
     } catch (error: any) {
         res.status(500).send({
-            messsage: 'Something went wrong!',
+            messsage: error.message || 'Something went wrong!',
             status: false,
             error,
             stack: error?.stack
@@ -87,7 +87,7 @@ const updateSingleConProduct = async (req: Request, res: Response) => {
         })
     } catch (error: any) {
         res.status(500).send({
-            messsage: 'Something went wrong!',
+            messsage: error.message || 'Something went wrong!',
             status: false,
             error,
             stack: error?.stack
@@ -107,7 +107,7 @@ const deleteSingleConProduct = async (req: Request, res: Response) => {
         })
     } catch (error: any) {
         res.status(500).send({
-            messsage: 'Something went wrong!',
+            messsage: error.message || 'Something went wrong!',
             status: false,
             error,
             stack: error?.stack

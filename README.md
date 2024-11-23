@@ -4,6 +4,59 @@ A TypeScript-based Express application for managing a bicycle store. This projec
 
 ---
 
+
+## Api link : https://bi-cycle-store-alpha.vercel.app/
+
+### Products 1. Create a Bicycle
+Endpoint: /api/products
+Method: POST
+Request Body:
+{
+  "name": "Roadster 5000",
+  "brand": "SpeedX",
+  "price": 300,
+  "type": "Road",
+  "description": "A premium road bike designed for speed and performance.",
+  "quantity": 20,
+  "inStock": true
+}
+
+### Products 2. Get All Bicycles
+Endpoint: /api/products
+Method: GET
+
+### Products 3. Get a Specific Bicycle
+Endpoint: /api/products/:productId
+Method: GET
+
+### Products 4. Update a Bicycle
+Endpoint: /api/products/:productId
+Method: PUT
+Request Body: (Bicycle details to update)
+{
+  "price": 350,
+  "quantity": 15
+}
+
+### Products 5. Delete a Bicycle
+Endpoint: /api/products/:productId
+Method: DELETE
+
+### Products 6. Order a Bicycle
+Endpoint: /api/orders
+Method: POST
+Request Body:
+{
+  "email": "customer@example.com",
+  "product": "648a45e5f0123c45678d9012",
+  "quantity": 2,
+  "totalPrice": 600
+}
+
+### Products 7. Calculate Revenue from Orders (Aggregation)
+Endpoint: /api/orders/revenue
+Method: GET
+
 ## Features
 
 ### Products
